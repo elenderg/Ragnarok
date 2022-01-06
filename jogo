@@ -1,2 +1,20 @@
 Etapas para que nosso programa seja executado:
-Feche nosso programa.
+    Carregue as bibliotecas padrão do sistema.
+    Limpe a tela.
+    Inicialize o mapa.
+    Mostre a seta do mouse.
+    Faça uma caixa 96 px por 48 px.
+    Centralize a caixa sobre a tela.
+    Percorra.
+      Desenfileire um event.
+      Se o event for inexistente, pare.
+      Se a categoria deste event for "mostrar seta", execute o event usando a caixa (mostrar seta).
+      Se a categoria deste event for "clique", cancele.
+    Repita.
+    Feche nosso programa.
+
+Etapas necessárias para que se execute um event usando uma caixa (mostrar seta):
+    Atribua a cor branca a uma cor.
+    Se a localização deste event estiver na caixa, atribua a cor verde à cor.
+    Pinte e preencha a caixa com a cor.
+    Atualize a tela.

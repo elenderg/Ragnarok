@@ -1,4 +1,5 @@
 Um mapa é uma caixa.
+O mapa é um mapa.
 
 \ Uma caixa é um conjunto com
   \ Uma coordenada X do canto superior esquerdo , 
@@ -8,7 +9,7 @@ Um mapa é uma caixa.
 
 Etapas para que se inicialize um mapa:
     Atribua a caixa desta tela ao mapa.
-    Pinte e preencha a caixa deste mapa com a cor verde.
+    Pinte e preencha este mapa com a cor verde.
 
 Etapas para que se determine se um personagem está no limite do mapa:
     \ a sequência de ações abaixo irá criar um retângulo. Se o personagem estiver fora do retângulo, isso significa que ele estará no limite do mapa.

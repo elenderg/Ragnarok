@@ -7640,7 +7640,7 @@ Etapas para que se inicialize a tela:
   Atribua a pixel largura desta tela times a quantidade de twips/pixel a uma largura.
   Atribua a pixel altura desta tela times a quantidade de twips/pixel a uma altura.
   Atribua 0 e 0 e a largura e a altura à caixa desta tela.
-  Subtraia a quantidade de twips/pixel desde o canto inferior direito desta tela.
+  Subtraia a quantidade de twips/pixel desde a coordenada Y do canto inferior direito desta tela.
 
 Etapas para que se inicialize o tela canvas:
   Call "user32.dll" "GetDC" com \ https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getdc

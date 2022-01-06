@@ -712,7 +712,7 @@ Etapas para que se pinte uma caixa com uma cor da borda e uma cor de preenchimen
   Isole a caixa.
   Crie o hPen of o quadro atual usando a cor da borda.
   Crie o hBrush of o quadro atual usando a cor de preenchimento.
-  Se a cor da borda estiver clear, adicione a quantidade de twips/pixel para o canto superior esquerdo desta caixa.
+  Se a cor da borda estiver clear, adicione a quantidade de twips/pixel para a coordenada X do canto superior esquerdo desta caixa.
   Call "gdi32.dll" "Rectangle" com \ https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-rectangle
     \A função Retângulo desenha um retângulo. O retângulo é delineado com a caneta (pincel) atual e preenchido com o rolo de tinta (brush) atual.
     O quadro atual [hDC] \Um identificador para o contexto do dispositivo.
