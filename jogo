@@ -2,19 +2,40 @@ Etapas para que nosso programa seja executado:
     Carregue as bibliotecas padrão do sistema.
     Limpe a tela.
     Inicialize o mapa.
+    Inicialize o personagem.
     Mostre a seta do mouse.
-    Faça uma caixa 96 px por 48 px.
+    Faça uma caixa 48 px por 48 px.
     Centralize a caixa sobre a tela.
     Percorra.
       Desenfileire um event.
       Se o event for inexistente, pare.
       Se a categoria deste event for "mostrar seta", execute o event usando a caixa (mostrar seta).
-      Se a categoria deste event for "clique", cancele.
+      \Se a categoria deste event for "clique", mova o personagem no mapa usando a localização deste mouse e a caixa.
+      Se a categoria deste event for "clique direito", cancele.
     Repita.
     Feche nosso programa.
 
 Etapas necessárias para que se execute um event usando uma caixa (mostrar seta):
     Atribua a cor branca a uma cor.
-    Se a localização deste event estiver na caixa, atribua a cor verde à cor.
+    Se a localização deste event estiver na caixa, atribua a cor verde escuro à cor.
     Pinte e preencha a caixa com a cor.
     Atualize a tela.
+
+Etapas para que se responda para um event usando uma ação desse personagem:
+    Se a categoria deste event for "clique", mova o personagem usando a localização deste mouse.
+
+\ Uma localização é um par de números com 
+  \ Uma coordenada X e 
+  \ Uma coordenada Y e 
+
+\Uma coordenada é uns twips.
+
+Etapas para que se mova um personagem em um mapa usando uma localização e uma caixa: \ não seria no mapa?  
+    Se a coordenada X do canto superior esquerdo deste mapa for menor do que a coordenada X desta localização, adicione 1 à  coordenada X do canto superior esquerdo desta caixa; repita.
+    Se a coordenada X do canto inferior direito deste mapa for menor do que a coordenada X desta localização, adicione 1 à coordenada X do canto inferior direito desta caixa; repita.
+    Se a coordenada Y do canto superior esquerdo deste mapa for menor do que a coordenada Y desta localização, adicione 1 à  coordenada Y do canto superior esquerdo desta caixa; repita.
+    Se a coordenada Y do canto inferior direito deste mapa for menor do que a coordenada Y desta localização, adicione 1 à  coordenada Y do canto inferior direito desta caixa; repita.
+    Se a coordenada X do canto superior esquerdo deste mapa for maior do que a coordenada X desta localização, subtraia 1 desde a coordenada X do canto superior esquerdo desta caixa; repita.
+    Se a coordenada X do canto inferior direito deste mapa for maior do que a coordenada X desta localização, subtraia 1 desde a coordenada X do canto inferior direito desta caixa; repita.
+    Se a coordenada Y do canto superior esquerdo deste mapa for maior do que a coordenada Y desta localização,subtraia 1 desde a  coordenada Y do canto superior esquerdo desta caixa; repita.
+    Se a coordenada Y do canto inferior direito deste mapa for maior do que a coordenada Y desta localização, subtraia 1 desde a coordenada Y do canto inferior direito desta caixa; repita.

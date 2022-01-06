@@ -1,3 +1,5 @@
+O personagem é um personagem.
+
 Um personagem é um conjunto com
     Um nome,
     Uma profissão, Uma classe sob a profissão,
@@ -90,6 +92,8 @@ Um item do jogo é um conjunto com
     Um efeito.
 
 Uma restrição de utilização é uma coisa com umas strings.
+
+O conjunto de atributos é um conjunto de atributos.
 
 Um conjunto de atributos é um conjunto com
     Uns atributos primários, \ FOR, SOR, DEX, AGI,VIT, INT
@@ -420,9 +424,7 @@ Um atributo terciário é um conjunto com
     \Impede o uso de quaisquer habilidades.
     \Não pode atacar oponentes.
 
-Um alcance é um conjunto com
-    Uma coordenada inicial,
-    Uma coordenada final.
+Um alcance é um número.
 
 Um tempo de conjuração é uns milissegundos.
 Uma capacidade de carga é um número.
