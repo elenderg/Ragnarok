@@ -1,0 +1,446 @@
+Um personagem é um conjunto com
+    Um nome,
+    Uma profissão, Uma classe sob a profissão,
+    Uma categoria de classe,
+    Um nível de base,
+    Um nível de classe,
+    Um quantidade de experiência acumulada,
+    Uma quantidade de experiência recebida,
+    Um conjunto de habilidades,
+    Um inventário,
+    Uns equipamentos,
+    Um conjunto de atributos,
+    Uma localização,
+    Um bicho de estimação,
+    Uma montaria,
+    Um conjunto de ações,
+    Uma aparência.
+
+Uma classe é uma string.
+
+Um bicho de estimação é um conjunto com
+    Um nome,
+    Uma descrição,
+    Umas habilidades.
+
+Uma montaria é um conjunto com
+    Um nome,
+    Uma descrição,
+    Umas habilidades.
+
+Uma profissão é uma string. \Aprendiz, Lanceiro, Arqueiro, Mago, Noviço, Mercador e Gatuno são as classes iniciais
+Uma categoria de classe é uma string. \ As evoluções das classes são baseadas nas classes iniciais
+Um nível de base é um nível. \ serve para aumentar os atributos em geral
+Um nível de classe é um nível. \ Serve para aumentar as habilidades
+Um nível é um número.
+Uma quantidade de experiência acumulada é um número. \Serve para calcular quantos % falta pra aumentar de nível
+Uma quantidade de experiência recebida é um número.
+
+Um conjunto de habilidades é um conjunto com
+    Umas habilidades passivas, \Costumam ser executadas automaticamente, e não geralmente não gastam SP
+    Umas habilidades ativas,
+    Umas habilidades especiais. \ Só podem ser aprendidas realizando uma quest.
+
+Uma habilidade passiva é uma habilidade.
+Uma habilidade ativa é uma habilidade.
+Uma habilidade especial é uma habilidade.
+
+Uma habilidade é um conjunto com
+    Um nome,
+    Uma descrição,
+    Um nível atual,
+    Um efeito, 
+    Um nível mínimo de utilização,
+    Uns requisitos.
+
+Um requisito é um conjunto com
+    Um detector.
+
+Uma descrição é uma string.
+Um nível atual é um nível.
+
+Um efeito é um conjunto com
+    Um valor de alteração,
+    Um tempo de duração,
+    Um detector. \ -> Um detector é um conjunto com 4 bytes.
+
+Um valor de alteração é um número.
+Um tempo de duração é uns milissegundos.
+
+Um nível mínimo de utilização é um número.
+
+Um inventário é um conjunto com
+    Uns lista de itens consumíveis,
+    Uns lista de equipamentos,
+    Uns lista de itens de quest.
+
+Um lista de itens consumíveis é uma coisa com uns itens  consumíveis.
+Um lista de itens de quest é uma coisa com uns itens de quest.
+Um lista de equipamentos é uma coisa com uns equipamentos.
+
+Um item consumível é um item do jogo.
+Um equipamento é um item do jogo.
+Um item de quest é um item do jogo.
+
+Um item do jogo é um conjunto com 
+    Um nome,
+    Uma descrição,
+    Uma região de utilização,
+    Uma restrição de utilização,
+    Um efeito.
+
+Uma restrição de utilização é uma coisa com umas strings.
+
+Um conjunto de atributos é um conjunto com
+    Uns atributos primários, \ FOR, SOR, DEX, AGI,VIT, INT
+    Uns atributos secundários, \ HP, SP, ATK, ATKM, DEF, DEFM, Esquiva, Precisão, Precisão Perfeita, Crítico, ASPD
+    Uns atributos terciários. \ Velocidade de Movimento, Alcance, Conjuração, Peso
+
+Uma força é um número.
+Uma agilidade é um número.
+Uma destreza é um número.
+Uma vitalidade é um número.
+Uma inteligência é um número.
+Uma sorte é um número.
+
+Um atributo primário é um conjunto com
+    Uma força, \Força (FOR) é mais usada em personagens de ataques corpo a corpo.
+    \Ela influencia diretamente no ataque básico e no ataque físico da arma usada.
+    \Quando estiver usando armas de curta distância ou sem arma, cada 1 ponto em FOR garante:
+    \Ataque físico base +1.
+    \Ataque físico influenciado pela arma equipada +0,5%.
+    \Quando estiver usando armas de longa distância (como arcos e pistolas), cada 5 pontos de FOR proporciona:
+    \Ataque físico base +1.
+    \Cada 1 ponto em FOR também garante os seguintes bônus:
+    \Capacidade de carga +30 (apenas atributo base, ou seja, de equipamentos e classe não contam).
+    \Duração da imobilização de Tornado -0,04 segundos.
+    \Tolerância as Máscaras de renegados +0,3%.
+    Uma agilidade, \Quanto maior a agilidade (AGI), menor será o tempo da animação do personagem para realizar um ataque.
+    \É por isso que o atributo também é usado para reduzir o tempo de espera das habilidades, mesmo não tendo influência direta nelas.
+    \Este atributo não aumenta a sua velocidade de movimento nem reduz a conjuração.
+    \Cada 1 ponto de AGI proporciona:
+    \Esquiva +1.
+    \Aumenta a velocidade de ataque.
+    \Tolerância a sangramento, ferimento crítico e sono +1%.
+    \Tolerância as Máscaras de renegados +0,166% ~ 0,33%.
+    \A cada 5 pontos em AGI:
+    \Defesa física básica +1
+    Uma vitalidade,\Vitalidade (VIT) é o atributo conhecido por aumentar o HP e a defesa do personagem.
+    \É também mais usado para melhorar as resistências contra efeitos negativos.
+    \Cada 1 ponto de VIT fornece:
+    \HP máximo +1% (multiplicativo).
+    \Efetividade de cura de itens que regeneram HP +2%.
+    \Tolerância a envenenamento, envenenamento mortal e atordoamento +1%.
+    \Tolerância a Grito da Mandrágora +0,2%.
+    \Aumenta a tolerância a incêndio, hipotermia e cristalização.
+    \Reduz a duração de envenenamento, envenenamento mortal e atordoamento.
+    \Duração de incêndio, hipotermia e cristalização -0,1 segundo.
+    \Cada 2 pontos de VIT proporcionam defesa física base +1
+    \Cada 5 pontos de VIT proporcionam:
+    \Defesa mágica base +1
+    \Velocidade de regeneração natural de HP +1 a cada segundo.
+    \Cada 200 pontos de HP máximo aumenta a velocidade de regeneração natural em +1.
+    Uma inteligência,\Inteligência (INT) é conhecida por aumentar o poder mental do personagem, melhorando os ataques mágicos e reduzindo a conjuração variável.
+    \Comumente usada em personagens mágicos.
+    \Cada 1 ponto de INT proporciona:
+    \Ataque mágico base +1,5.
+    \SP máximo +1% (multiplicativo).
+    \Efetividade de cura dos itens que regeneram SP +1%.
+    \Chance de sucesso ao criar poções de Alquimia +0,05%.
+    \Tolerância a silêncio e cegueira +1%.
+    \Reduz levemente o tempo de conjuração variável.
+    \Cada 2 pontos de INT:
+    \Defesa mágica base +1.
+    \Velocidade de regeneração natural de SP +1 a cada segundo.
+    \Cada 6 pontos de INT:
+    \Velocidade de regeneração natural de SP +1 a cada segundo.
+    Uma destreza,\A Destreza (DES) é um atributo geralmente usado para aumentar os ataques físicos de quem ataca em longas distâncias, usando arco, armas de fogo, chicotes ou instrumentos musicais.
+    \Quando estiver usando armas de longa distância, cada 1 ponto em DES garante:
+    \Ataque físico base +1
+    \Ataque físico influenciado pela arma equipada +0,5%.
+    \Cada 1 ponto de DES oferece:
+    \Precisão +1.
+    \Chance de sucesso em Furto, Forja e Alquimia +0,1%.
+    \Chance de sucesso de remoção de equipamentos +0,2%.
+    \Chance de sucesso na Culinária +0,2%
+    \Reduz o tempo de conjuração variável.
+    \Aumenta a velocidade de ataque.
+    \Cada 5 pontos em DES:
+    \Ataque físico base com armas de curta distância +1.
+    \Ataque mágico base +1.
+    \Defesa mágica base +1.
+    Uma sorte.\Sorte (SOR) é um atributo "coringa", por aumentar a maioria dos atributos secundários em uma quantidade menor.
+    \Ela não aumenta suas chances de derrubar itens dos monstros.
+    \Cada 1 ponto em SOR proporciona:
+    \Chances de sucesso em Forja, Alquimia e Culinária +0,1%.
+    \Tolerância a caos e maldição +1%.
+    \Tolerância a Grito da Mandrágora +0,2%.
+    \Levemente aumenta a tolerância a coma.
+    \Cada 3 pontos em SOR oferecem:Sorte.png
+    \Ataque crítico +1.
+    \Ataque físico base +1.
+    \Ataque mágico base +1.
+    \Precisão +1.
+    \Chance das aves ou worgs dos Sentinelas atacarem automaticamente +1%.
+    \Cada 5 pontos em SOR garantem:
+    \Esquiva +1.
+    \Tolerância a ataques críticos +1%.
+    \Cada 10 pontos em SOR:
+    \Esquiva perfeita +1.
+
+Um valor de precisão é um número.
+Um valor de precisão perfeita é um número.
+Um valor de esquiva é um número.
+Um valor de esquiva perfeita é um número.
+
+Um valor do ataque mágico é um número.
+Um valor da defesa mágica é um número.
+Um valor do ataque físico é um número.
+Um valor da defesa física é um número.
+Um ATK é um número.
+Um ATKM é um número.
+Um DEF é um número.
+Um DEFM é um número.
+
+Uma quantidade de HP é um número.
+Um HP é um número.
+Uma quantidade de SP é um número.
+Um SP é um número.
+
+Um atributo secundário é um conjunto com
+    Uma quantidade de HP, Um HP sob a quantidade de HP, 
+    \\HP (Health Points) 
+    \É a vida dos personagens.
+    \É exibido como uma barra verde (ou vermelha, se estiver muito baixa) que fica abaixo/acima do personagem.
+    \Se o personagem estiver em um grupo ou possuir um Assistente/Homunculus/Espírito Elemental, ele será capaz de visualizar a barra de vida deles; 
+    \Em monstros, a barra de HP é exibida em roxo.
+    \O aumento do HP leva em consideração 4 coisas:
+    \O nível de base, a classe do personagem, a VIT, os modificadores de soma e os modificadores de multiplicação.
+    \Há uma diferença entre o HP base e o HP máximo: 
+    \O HP base é aumentado somente por pontos de VIT, 
+    \O HP máximo é o resultado de todos os bônus acumulados em seu personagem.
+    \Um item que aumenta o HP em % aumentará o valor de acordo com o HP Base e não de acordo com o HP Máx.
+    \Exemplo:
+    \Digamos que, sem nenhum equipamento, o personagem possui 1.000 de HP e pretende usar as cartas Tao Gunka e Fabre.
+    \Ao equipar a Fabre (que é um modificador de soma, aumentando o HP em 100), o HP sobe para 1.100.
+    \Ao equipar a Tao Gunka (modificador de multiplicação, e multiplica o HP por 2), o HP sobe para 2.100 e não para 2.200.
+    \Itens que aumentam a regeneração natural de HP ou SP tendem a acelerar a velocidade da restauração de HP ou SP.
+    \Imagine que seu personagem, em pé, recupera 1 ponto de vida naturalmente a cada 100 segundos.
+    \Ao sentar, sua recuperação de HP dobra, passando a recuperar 1 de HP a cada 50 segundos.
+    \Ao utilizar um item que aumenta a recuperação natural em 100%, sua recuperação de HP, em pé, será de 50 segundos e sentado, será de 25 segundos.
+     \Cada 200 pontos de HP máximo aumenta a velocidade de regeneração natural em +1.
+    Uma quantidade de SP, Um SP sob a quantidade de SP, 
+    \SP (Soul Points) são pontos necessários para usar habilidades e é exibido como uma barra azul abaixo da barra verde de HP.
+    \O aumento do SP leva em consideração o nível de base, a classe do personagem, a INT e modificadores de soma e multiplicação.
+    Um valor do ataque físico, Um ATK sob o valor do ataque físico, 
+    \Ataque Físico (ATQ) compreende em golpes físicos desferidos por armas de curta ou longa distância, 
+    \sendo identificado na janela de atributos como "A + B", 
+    \onde "A" é o ATQ Base e "B" é o ATQ ganho através de armas e equipamentos.
+    \ ATQ Base (Status ATK):
+    \ É dado pelos atributos FOR, DES e SOR. É sempre neutro e só pode ter sua propriedade mudada pela habilidade Brisa Leve.
+    \Seu efeito não é afetado por itens como a carta Hidra e a carta Deviling.
+    \ATQ da Arma (Weapon ATK):
+    \Proveniente da arma, considerando a propriedade e o refinamento.
+    \É afetado por itens como a carta Hidra e a carta Raydric ou se o oponente for de propriedade fantasma.
+    \É influenciado pelo tamanho do oponente.
+    \ATQ de Equipamentos (Equip ATK):
+    \Proveniente de qualquer equipamento (ou carta) que possua algum bônus de ataque somatório, como a carta Porcellio e a carta Zipper.
+    \É afetado por itens como a carta Hidra e a carta Raydric.
+    \É influenciado pelo poder de ataque das munições, caso esteja atacando em longa distância.
+    \Perícias:
+    \ É o ataque originado das armas forjadas com Fragmento Estelar e das habilidades como Perícia com Maça, Rufar dos Tambores e derivados.
+    \Ignora a DEF do alvo, é afetado por efeitos de dano físico a distância e dano crítico, mas não é influenciado pelo tamanho, raça ou propriedade do alvo.
+    \Todo item que aumenta o dano físico, aumenta o dano causado por ataques a distância e por ataques corpo a corpo.
+    \Em itens que aumentam o dano por raça, propriedade e tamanho o cálculo é feito da seguinte maneira, como exemplo:
+    \Um personagem que tem, na sua janela de atributos, o ATQ 71 + 120.
+    \Sabendo que 120 é o ATQ dado pela arma equipada e 71 é o ATQ dado pela FOR.
+    \Ao equipar uma carta Hidra na arma, o usuário obteve os seguintes valores:
+    \Dano sem arma equipada no humanoide: 40
+    \Dano com a arma equipada, mas sem a carta, no humanoide: 168
+    \Dano com a arma equipada com a carta, no humanoide: 193
+    \Subtraindo: 168-40 = 128
+    \A carta fornece 20% de dano físico contra humanoides, 
+    \Transformando esse 20% em um fator de multiplicação, ele se torna 1,2. (se fosse 50%, seria 1,5. Se fosse 30%, seria 1,3 e assim por diante)
+    \Multiplicando então: 128 × 1,2 = 153,6
+    \Agora, adiciona-se o dano sem a arma equipada no resultado acima: 153,6 + 40 = 193
+    \193 é o dano final causado no alvo humanoide.
+    \Ou seja, cartas de dano físico contra raças, propriedades e tamanhos nunca aumentarão o dano final dos seus ataques.
+    \Já os itens que aumentam o dano físico a distância são aplicados no dano final, somando o ATQ base e o ATQ da arma.
+    \O bônus fornecido é apenas para ataques a distância, usando arcos, armas de fogo e habilidades específicas. 
+    \Mesmo se um personagem estiver a uma célula de distância, o dano ainda é considerado de longa distância.
+    \ Os efeitos de dano a distância são válidos somente para danos físicos.
+    \ Danos mágicos, mesmo à distância, não são considerados.
+    \Isso acontece porque, ataques mágicos possuem distâncias determinadas pela habilidade.
+    Um valor do ataque mágico, Um ATKM sob o valor do ataque mágico,
+    \Ataque Mágico (ATQM) compreende em golpes mágicos e são sempre influenciadas pela propriedade.
+    \Ataques mágicos são identificados na sua janela de atributos por "A + B", 
+    \onde "A" é o "ATQM Base" e "B" é o ATQM ganho através de armas e equipamentos:
+    \ATQM Base (Status MATK):
+    \É todo o ataque mágico dado pela INT, DES e SOR.
+    \ATQM da Arma (Weapon MATK):
+    \Proveniente da sua arma equipada, leva em consideração o refinamento e o nível da arma.
+    \Esta é a parte que mais afeta seu poder de ataque mágico.
+    \ATQM de Equipamentos (Equip MATK):
+    \Proveniente de qualquer equipamento (carta ou habilidade) que possua algum bônus somatório, 
+    \como a carta Larva de Centopéia e o Poder de Odin.
+    \ Modificadores:
+    \ São variantes com valor em porcentagem que encontram-se em cartas, equipamentos e habilidades, 
+    \tais como a carta Agav, Olhos Biônicos e Serenata ao Luar.
+    \Esses valores não são exibidos na janela de atributos do personagem.
+    Um valor da defesa física, Uma DEF sob o valor da defesa física,
+    \Defesa Física (DEF) reduz o dano dos ataques físicos desferidos em você pelos seus oponentes.
+    \É mostrada como "A + B" na janela de atributos do seu personagem, 
+    \onde "A" é a "DEF Leve" e "B", a "DEF Pesada".
+    \DEF Leve (Soft DEF):
+    \Oriunda dos atributos (FOR, AGI, VIT), subtrai o dano final recebido pelo personagem. 
+    \É aqui onde as habilidades Proteção Divina e Angelus são calculadas.
+    \DEF Pesada (Hard DEF):
+    \É nessa parte da fórmula que entra a defesa originada dos itens e habilidades, 
+    \tais como carta Bode (bônus de soma) e Assumptio (bônus em porcentagem).
+    \Uma pessoa com 500 de DEF Pesada consegue reduzir o dano pela metade.
+    \Diferente da DEF Leve, que subtrai o dano, essa DEF reduz o dano de maneira percentual. 
+    \A defesa dos monstros é considerada DEF Pesada.
+    Um valor da defesa mágica, Uma DEFM sob o valor da defesa mágica,
+    \Defesa Mágica (DEFM) não é muito diferente da defesa física.
+    \É exibida como "A + B" na janela de atributos do seu personagem, onde "A" é a "DEFM Leve" e "B", a "DEFM Pesada".
+    \DEFM Leve (Soft MDEF):
+    \Oriunda dos atributos (INT, DES, VIT), subtrai o dano final recebido pelo personagem.
+    \DEFM Pesada (Hard MDEF):
+    \É nessa parte da fórmula que entra a defesa mágica originada dos itens e habilidades, 
+    \ais como carta Árvore Maldita (bônus de soma) e Assumptio (bônus em porcentagem).
+    \Uma pessoa com 125 de DEFM Pesada consegue reduzir o dano pela metade.
+    \Cada ponto de DEFM Pesada aumenta em 1% a tolerância a congelamento e petrificação. 
+    \Entretanto, mesmo adquirindo 100 de DEFM, a resistência a esses efeitos negativos ainda contabiliza a diferença de nível entre você e seu oponente.
+    Um valor de esquiva,
+    \Esquiva e Esquiva Perfeita são os valores gerados para desviar de um golpe físico de seu oponente, 
+    \se sua esquiva for menor que a precisão do inimigo, você recebe o ataque físico, já que não é possível esquivar-se de ataques mágicos.
+    \Elas são exibidas como "A + B" na sua janela de equipamentos, sendo "A" para esquiva e "B" para esquiva perfeita.
+    \Esquiva:
+    \É o valor calculado junto com a precisão para definir as chances de desviar-se de um golpe.
+    \É aumentado por qualquer item com bônus de esquiva, como a carta Choco.
+    \Certas classes possuem mais facilidade em conseguir altas quantidades de esquiva, por exemplo, os Gatunos e evoluções.
+    \Se o jogador estiver sendo atacado por mais de 2 monstros, a esquiva é reduzida em 10% para cada monstro adicional.
+    Um valor de esquiva perfeita,
+    \Esquiva Perfeita:
+    \É calculada primeiro: se a esquiva perfeita não funcionar, será a vez da esquiva entrar na fórmula.
+    \Os valores exibidos são sempre em porcentagem, portanto, 
+    \Possuir 1 de esquiva perfeita significa 1% de chance de desviar de um ataque.
+    \Pode alcançar 100% de evasão de ataques físicos.
+    \Quando o usuário consegue uma esquiva perfeita, será exibido um balão de "Sortudo'" em cima do personagem.
+    Um valor de precisão,\A Precisão é a chance que você tem para atingir o alvo, 
+    \se ela for menor que a esquiva do oponente, você erra o golpe.
+    \ Sua esquiva não poderá ultrapassar 95%, exceto na Guerra do Emperium. 
+    \Isso quer dizer que você sempre terá 5% ou mais de chance de ser atingido por um ataque.
+    \ A chance de se esquivar de outros jogadores é calculada desta maneira:
+    \ [80 menos (a Precisão de quem ataca menos a Esquiva do alvo)]%
+    \ Cálculo feito se não ocorrer esquiva perfeita
+    \ A chance de acertar monstros é calculada desta maneira:
+    \ 100 menos (a Precisão menos a Esquiva do monstro)%
+    \ Um exemplo de aplicação da fórmula: 
+    \ Esquiva do alvo =  350 de esquiva + 5 de esquiva perfeita
+    \ Precisão do atacante =  390
+    \ Chance de Esquivar = 100% - (390 - 350)%
+    \ Chance de Esquivar = 100% - 40%
+    \ Chance de Esquivar = 60%
+    Um valor de precisão perfeita,
+    \Monstros e personagens já começam com 5 pontos de precisão perfeita, 
+    \que só poderá ser aumentada por itens como a Carta Múmia Anciã.
+    \ Sua função é garantir que os ataques normais ou por habilidades sempre acertem seu oponente, independente da sua baixa precisão.
+    \ Exemplo: Se seu alvo possuir 10.000 de esquiva e você tiver 10 de precisão, mas tem 50 de precisão perfeita, você terá 50% de chance de acertar o alvo, mesmo com pouca precisão.
+    \ Por causa dela, é impossível que seu personagem erre 100% dos golpes em um alvo, a menos que ele possua 100 de esquiva perfeita.
+    \ Precisão perfeita não acerta alvos com 100 de esquiva perfeita.
+    Um valor de crítico,
+    \Crítico (CRIT) exibido na janela de atributos é a chance que o personagem possui de realizar ataques críticos que ignoram a esquiva do alvo.
+    \ O ataque crítico causa 40% a mais de dano que um ataque físico normal e é exibido em um balão vermelho.
+    \ Cada 5 pontos de SOR, aumenta 1% de chance de não receber um ataque crítico.
+    \ Crítico = [(SOR × 0,3) + Modificadores].
+    \ Os modificadores são itens que aumentam o crítico diretamente, como a carta Vanberk e Beijo da Sorte.
+    \ As chances de sair um ataque crítico duplicam se o personagem estiver equipando um Katar.
+    \ O dano de um ataque crítico pode ser aumentado por itens como as cartas Aunoe, Papel e Sedora.
+    \ O dano crítico de um jogador pode ser ignorado pela esquiva perfeita, mas a habilidade Ataque Crítico dos monstros não pode ser esquivada por ela.
+    Uma velocidade de ataque, Uma ASPD sob a velocidade de ataque.
+    \Velocidade de ataque (ASPD) é a quantidade de golpes por segundo que um personagem poderá desferir nos oponentes, 
+    \onde 5 golpes por segundo podem ser desferidos no oponente se seu personagem tiver 190 de ASPD, por exemplo.
+    \A velocidade de ataque varia de acordo com:
+    \a Classe do usuário;
+    \a arma e o escudo usados;
+    \AGI e DES;
+    \Poções, equipamentos ou habilidades;
+    \Em algumas classes, usar escudo tem uma penalidade de velocidade de ataque.
+    \O limite máximo da velocidade de ataque:
+    \193 para personagens até nível 99.
+    \196 para personagens acima do nível 100.
+    \Quanto mais próximo desse limite máximo, mais difícil será para alcançá-lo.
+    \O número é exibido arredondado na janela de atributos, não mostrando os valores decimais.
+    \Exemplo:
+    \Você pretende adquirir um chapéu que adiciona 5% de velocidade de ataque.
+    \Sua velocidade de ataque atual é 180,06, sendo exibida na janela de atributos como 180.
+    \Ao equipar o item, sua velocidade de ataque não ficará com 189, o valor final será de 180,81; sendo exibido como 180 de velocidade de ataque.
+    \Se seu personagem possuir 180,99 de velocidade de ataque e equipar o item, aí você perceberá a mudança na sua janela de atributos.
+    \Hits por segundo.png
+    \Para saber a quantidade de ataques por segundo, basta realizar os seguintes cálculos:
+    \ A partir da velocidade de ataque: [50 ÷ (200 - Velocidade de Ataque final)]
+    \ A partir do tempo de Pós-conjuração: [1 ÷ (Tempo de Pós-conjuração em segundos)]
+    \ Observe que bônus de velocidade de ataque em porcentagem não são calculados a partir da velocidade exibida na Janela de Atributos.
+    \ Apenas valores fixos serão adicionados na sua ASPD final.
+
+Uma velocidade de ataque é um número.
+Uma ASPD é um número.
+Um valor de crítico é um número.
+
+Uma velocidade de movimento é uns twips.
+
+Um atributo terciário é um conjunto com
+    Uma velocidade de movimento, 
+    \É o atributo que influencia na velocidade da caminhada e não pode ser aumentada pela AGI.
+    \Um personagem leva 0,15 segundos para mover uma célula, mas esse tempo pode ser variar de acordo com itens, habilidades ou montarias.
+    \O único valor que pode ser acumulativo é a Montaria, portanto, ao utilizar dois itens ou habilidades distintas para aumentar a velocidade de movimento, 
+    \o que prevalecerá será o que maior influência (salvo a Montaria, que é cumulativa).
+    Um alcance, 
+    \É a distância de um ataque entre você e o seu oponente. Para a maioria das armas, o alcance máximo é de 3 células, acima disso, seu personagem se moverá para próximo do inimigo.
+    \Armas de longa distância podem atingir oponentes a uma distância a partir de 5 células, com exceção da Maça Longa, cujo a distância é de 4 células.
+    \Em ataques de monstros, acima de 4 células é considerado de longa distância; abaixo disso é considerado corpo a corpo.
+    \Não existem atributos que influenciam a distância dos ataques, apenas as armas e a habilidade Olhos de Águia.
+    Um tempo de conjuração, 
+    \Conjuração é uma barra verde que aparece em cima do seu personagem indicando o progresso para usar a habilidade escolhida, como uma barra de "download".
+    \Ela é dividida em tempo de conjuração "fixa" e "variável".
+    \Conjuração fixa: não pode ser reduzida através de atributos, podendo ser reduzida somente pelas habilidades Inspiração e Sacramentum, cartas como Carta Fenrir ou itens específicos, como Rabo de Gato.
+    \Conjuração variável: pode ser reduzida através de DES e INT, equipamentos e cartas.
+    \Os efeitos de redução no tempo de conjuração fixa dados em porcentagem não são acumulativos, levando em consideração apenas o maior bônus de redução aplicado. Porém, os efeitos de redução em segundos são acumulativos, e tem prioridade na redução, ou seja, são aplicados antes da redução em porcentagem.
+    Uma capacidade de carga. 
+    \O peso é a capacidade máxima de itens que um personagem pode carregar.
+    \É influenciado pela FOR, classe do personagem e pela habilidades Aumentar Capacidade de Carga, Aumentar Capacidade de Carga Especial, Adestrar Dragão e Montaria.
+    \Mesmo com grande capacidade de carga, o limite de itens a serem carregados no inventário é de 100, não podendo ser aumentado.
+    \Itens equipados no seu personagem também são contabilizados no peso.
+    \Estar com excesso de peso implica nos seguintes efeitos anormais:
+    \Personagem está carregando 50% do peso máximo
+    \Desativa a recuperação de HP e SP natural.
+    \Procurar Pedras, Fabricar Flechas, Aumentar Recuperação de HP e Aumentar Recuperação de SP são desabilitados.
+    \Personagem está carregando 90% do peso máximo
+    \Impede o uso de quaisquer habilidades.
+    \Não pode atacar oponentes.
+
+Um alcance é um conjunto com
+    Uma coordenada inicial,
+    Uma coordenada final.
+
+Um tempo de conjuração é uns milissegundos.
+Uma capacidade de carga é um número.
+
+ Uma aparência é um conjunto com
+    Uma roupa,
+    Uma cor da roupa,
+    Um estilo de penteado,
+    Uma cor do cabelo,
+    Um gênero.
+
+Uma roupa é um equipamento.
+Uma cor da roupa é uma cor.
+Um estilo de penteado é uma string.
+Uma cor do cabelo é uma cor.
+Um gênero é uma string.
+Uma região de utilização é uma string.
+\Uma restrição de utilização é uma coisa com umas strings.
+
+Um conjunto de ações é um conjunto com umas ações.
+Uma ação é um event.

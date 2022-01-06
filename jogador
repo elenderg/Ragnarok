@@ -1,0 +1,50 @@
+Um jogador é um conjunto com
+    Um nome,
+    Um sobrenome,
+    Um nome completo,
+    Um endereço postal,
+    Um CPF,
+    Um conjunto de personagens,
+    Um login,
+    Uma senha,
+    Um endereço de email principal,
+    Um endereço de email secundário,
+    Um número de telefone.
+
+Um CPF é um número.
+Um CEP é um número.
+
+Um sobrenome é uma string.
+Um nome completo é uma string.
+
+Um endereço postal é um conjunto com
+    Um tipo do logradouro, \Rua, Avenida, Alameda, Etc
+    Um nome do logradouro,
+    Um número da residência,
+    Um complemento,
+    Um Código de Endereçamento Postal, Um CEP sob o Código de Endereçamento Postal,
+    Uma Cidade, 
+    Um Estado, Uma Unidade Federativa sob o Estado,
+    Um País.
+
+Um tipo do logradouro é uma string.
+Um nome do logradouro é uma string.
+Um número da residência é um número.
+Um complemento é uma string.
+Um Código de Endereçamento Postal é um número.
+Uma Cidade é uma string.
+Um Estado é uma string.
+Um País é uma string.
+
+Um conjunto de personagens é um conjunto com
+    Um personagem principal,
+    Um personagem secundário,
+    Um personagem terciário,
+    Um personagem alternativo.
+
+Um login é uma string.
+Uma senha é uma string.
+Um endereço de email principal é um endereço de email.
+Um endereço de email secundário é um endereço de email.
+Um endereço de email é uma string.
+Um número de telefone é um número.

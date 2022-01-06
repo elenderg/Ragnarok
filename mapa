@@ -1,0 +1,23 @@
+Um mapa é uma caixa.
+
+\ Uma caixa é um conjunto com
+  \ Uma coordenada X do canto superior esquerdo , 
+  \ Uma coordenada Y do canto superior esquerdo, 
+  \ Uma coordenada X do canto inferior direito, 
+  \ Uma coordenada Y do canto inferior direito.
+
+Etapas para que se inicialize um mapa:
+    Atribua a caixa desta tela ao mapa.
+    Pinte e preencha a caixa deste mapa com a cor verde.
+
+Etapas para que se determine se um personagem está no limite do mapa:
+    \ a sequência de ações abaixo irá criar um retângulo. Se o personagem estiver fora do retângulo, isso significa que ele estará no limite do mapa.
+    Isole o mapa.
+    Adicione 10 px para a coordenada X do canto superior esquerdo deste mapa. 
+    Adicione 10 px para a coordenada Y do canto superior esquerdo deste mapa.
+    Subtraia 10 px desde a coordenada X do canto inferior direito deste mapa.
+    Subtraia 10 px desde a coordenada Y do canto inferior direito deste mapa.
+    Se a localização deste personagem estiver acima ou abaixo of o mapa, diga sim.
+    Se a localização deste personagem estiver à direita ou à esquerda o mapa, diga sim.
+    Se a localização deste personagem estiver no mapa, diga não.
+    [Caso contrário] Diga não.

@@ -1,0 +1,75 @@
+Etapas para que se inicialize os atributos primários desse personagem:
+  Atribua 1 à força deste personagem.
+  Atribua 1 à agilidade deste personagem.
+  Atribua 1 à vitalidade deste personagem.
+  Atribua 1 à inteligência deste personagem.
+  Atribua 1 à destreza deste personagem.
+  Atribua 1 à sorte deste personagem.
+
+Etapas para que se inicialize os atributos secundários desse personagem:
+  Atribua 1 ao HP deste personagem.
+  Atribua 1 ao SP deste personagem.
+  Atribua 1 ao valor do ataque físico deste personagem. \7
+  Atribua 1 ao valor da defesa física deste personagem. \4
+  Atribua 2 ao valor da ataque mágico deste personagem. \10
+  Atribua 1 ao valor da defesa mágica deste personagem. \7
+  Atribua 102 ao valor de esquiva deste personagem. \107
+  Atribua 1 ao valor de esquiva perfeita deste personagem. \
+  Atribua 177 ao valor de precisão deste personagem. \182
+  Atribua 5 ao valor de precisão perfeita deste personagem. \
+  Atribua 1 ao valor de crítico deste personagem. \ 2
+  Atribua 156 à velocidade de ataque deste personagem. \157
+
+Etapas para que se inicialize os atributos terciários desse personagem:
+  Atribua 150 milissegundos à velocidade de movimento deste personagem.
+  Atribua 1 ao alcance deste personagem.
+  Atribua 1 ao tempo de conjuração deste personagem.
+  Atribua 30 à capacidade de carga deste personagem.
+
+Etapas para que se aumente o nível desse personagem:
+    Adicione 1 ao nível deste personagem.
+
+Um atributo é um conjunto com
+  Um nome,
+  Um valor.
+
+Um valor é um número.
+
+Uns pontos de atributo é um número.
+
+Etapas para que se conceda uns pontos de atributo para um personagem:
+  Se o nível de base deste personagem for menor do que 5, adicione 3 aos pontos de atributo disponíveis deste personagem; volte.  
+  Atribua o nível de base deste personagem a um número.
+  Divida o número por 5.
+  Adicione 3 ao número.
+  Adicione o número aos pontos de atributo disponíveis deste personagem.
+
+Etapas para que se aumente o valor desse atributo desse personagem:
+  \inv = atr-1/10
+  Reduza os pontos de atributo disponíveis disponíveis deste personagem.
+  Adicione 1 ao atributo.
+
+Etapas para que se reduza os pontos de atributo disponíveis disponíveis desse personagem:
+  Atribua o atributo -1 divido por 10 a um número de pontos necessários p/ aumento de atributo.
+  Se o número de pontos necessários p/ aumento de atributo for maior do que os pontos de atributo disponíveis deste personagem, cancele.
+  Se os pontos de atributo disponíveis deste personagem forem menor do que o número de pontos necessários p/ aumento de atributo, cancele.
+  Subtraia o número de pontos necessários p/ aumento de atributo desde os pontos de atributo disponíveis deste personagem.
+
+Etapas para que se determine se um personagem está tocando uma caixa:
+    Isole a caixa.
+    Se a localização deste personagem estiver na caixa, diga sim.
+    [Caso contrário] Diga não.
+
+Etapas para que se responda para um event usando uma ação desse personagem:
+    Se a categoria deste event for "clique", mova o personagem usando a localização deste mouse.
+
+Etapas para que se mova um personagem em um mapa usando uma localização: \ não seria no mapa?  
+    Se a coordenada X do canto superior esquerdo deste mapa for menor do que a coordenada X do canto superior esquerdo desta localização, adicione 1 à  coordenada X do canto superior esquerdo deste mapa; repita.
+    Se a coordenada X do canto inferior direito deste mapa for menor do que a coordenada X do canto  inferior direito desta localização, adicione 1 à coordenada X do canto inferior direito deste mapa; repita.
+    Se a coordenada Y do canto superior esquerdo deste mapa for menor do que a coordenada Y do canto superior esquerdo desta localização, adicione 1 à  coordenada Y do canto superior esquerdo deste mapa; repita.
+    Se a coordenada Y do canto inferior direito deste mapa for menor do que a coordenada Y do canto  inferior direito desta localização, adicione 1 à  coordenada Y do canto inferior direito deste mapa; repita.
+    Se a coordenada X do canto superior esquerdo deste mapa for maior do que a coordenada X do canto superior esquerdo desta localização, subtraia 1 desde a coordenada X do canto superior esquerdo deste mapa; repita.
+    Se a coordenada X do canto inferior direito deste mapa for maior do que a coordenada X do canto  inferior direito desta localização, subtraia 1 desde a coordenada X do canto inferior direito deste mapa; repita.
+    Se a coordenada Y do canto superior esquerdo deste mapa for maior do que a coordenada Y do canto superior esquerdo desta localização,subtraia 1 desde a  coordenada Y do canto superior esquerdo deste mapa; repita.
+    Se a coordenada Y do canto inferior direito deste mapa for maior do que a coordenada Y do canto  inferior direito desta localização, subtraia 1 desde a coordenada Y do canto inferior direito deste mapa; repita.
+
