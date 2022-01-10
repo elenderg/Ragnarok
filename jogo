@@ -3,26 +3,41 @@ Etapas para que nosso programa seja executado:
     Limpe a tela.
     Inicialize o mapa.
     Inicialize o personagem.
-    Mostre a seta do mouse.    
-    Percorra.
+    Mostre a seta do mouse.
+    Crie uma caixa no centro da tela.
+    Percorra. 
       Desenfileire um event.
       Se o event for inexistente, pare.
-      Se a categoria deste event for "mostrar seta", execute o event usando a caixa desta nova posição (mostrar seta).
-      Se a categoria deste event for "clique", mova o personagem no mapa usando a localização desta nova posição.
+      Se a categoria deste event for "mostrar seta", execute o event usando a caixa inicial (mostrar seta).
+      Se a categoria deste event for "clique",  mova o personagem no mapa usando a localização deste mouse (clique).
       Se a categoria deste event for "clique direito", cancele.
     Repita.
     Feche nosso programa.
 
+A posição inicial é um conjunto com uma caixa e uma localização.
 A nova posição é um conjunto com uma caixa e uma localização.
+A caixa inicial é uma caixa.
+
+Etapas para que se crie uma caixa no centro da tela:
+    \Aloque memória para a caixa inicial.
+    Faça a caixa inicial 40 px por 40 px.
+    Centralize a caixa inicial na caixa desta tela.
+
 
 Etapas necessárias para que se execute um event usando uma caixa (mostrar seta):
     Atribua a cor branca a uma cor.
-    Se a localização deste event estiver na caixa, atribua a cor verde escuro à cor.
+    Se a localização deste event estiver na caixa inicial, atribua a cor verde escuro à cor.
     Pinte e preencha a caixa com a cor.
     Atualize a tela.
 
-Etapas para que se responda para um event usando uma ação desse personagem:
-    Se a categoria deste event for "clique", mova o personagem usando a localização deste mouse.
+\ Etapas para que se responda para um event usando uma ação desse personagem:
+    \ Se a categoria deste event for "clique", mova o personagem usando a localização deste mouse.
+
+\ Uma caixa é um conjunto com
+  \ Uma coordenada X do canto superior esquerdo, 
+  \ Uma coordenada Y do canto superior esquerdo, 
+  \ Uma coordenada X do canto inferior direito, 
+  \ Uma coordenada Y do canto inferior direito,
 
 \ Uma localização é um par de números com 
   \ Uma coordenada X e 
@@ -30,10 +45,86 @@ Etapas para que se responda para um event usando uma ação desse personagem:
 
 \Uma coordenada é uns twips.
 
-Etapas para que se mova um personagem em um mapa usando uma localização: \ não seria no mapa?       
-    Atribua a localização deste mouse à localização.
-    Faça a caixa desta nova posição 48 px por 48 px.  
-    Atribua a localização à localização desta nova posição.
-    Centralize a caixa desta nova posição sobre a localização desta nova posição.
-    Limpe a tela com a cor verde.
-    Atualize a tela.
+Etapas para que se mova um personagem em um mapa usando uma localização(clique):
+    \Percorra.     
+      Limpe a tela com a cor verde.
+
+      Se a coordenada X do canto superior esquerdo desta caixa inicial for menor do que a coordenada X desta localização, 
+        Adicione 20 para a coordenada X do canto superior esquerdo desta caixa inicial;
+        Adicione 20 para a coordenada X do canto inferior direito desta caixa inicial.
+      
+      Se a coordenada Y do canto superior esquerdo desta caixa inicial for menor do que a coordenada Y desta localização, 
+        Adicione 20 para a coordenada Y do canto superior esquerdo desta caixa inicial;
+        Adicione 20 para a coordenada Y do canto inferior direito desta caixa inicial.
+
+      Se a coordenada X do canto inferior direito desta caixa inicial for menor do que a coordenada X desta localização, 
+        Adicione 20 para a coordenada X do canto inferior direito desta caixa inicial;
+        Adicione 20 para a coordenada X do canto superior esquerdo desta caixa inicial.
+        
+        
+      Se a coordenada Y do canto inferior direito desta caixa inicial for menor do que a coordenada Y desta localização, 
+        Adicione 20 para a coordenada Y do canto inferior direito desta caixa inicial;
+        Adicione 20 para a coordenada Y do canto superior esquerdo desta caixa inicial.
+
+      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+      
+      Se a coordenada X do canto superior esquerdo desta caixa inicial for maior do que a coordenada X desta localização, 
+        Subtraia 20 desde a coordenada X do canto superior esquerdo desta caixa inicial;
+        Subtraia 20 desde a coordenada X do canto inferior direito desta caixa inicial.
+      
+      Se a coordenada Y do canto superior esquerdo desta caixa inicial for maior do que a coordenada Y desta localização, 
+        Subtraia 20 desde a coordenada Y do canto superior esquerdo desta caixa inicial;
+        Subtraia 20 desde a coordenada Y do canto inferior direito desta caixa inicial.
+      
+      Se a coordenada X do canto inferior direito desta caixa inicial for maior do que a coordenada X desta localização, 
+        Subtraia 20 desde a coordenada X do canto inferior direito desta caixa inicial;
+        Subtraia 20 desde a coordenada X do canto superior esquerdo desta caixa inicial.
+      
+      Se a coordenada Y do canto inferior direito desta caixa inicial for maior do que a coordenada Y desta localização, 
+        Subtraia 20 desde a coordenada Y do canto inferior direito desta caixa inicial;
+        Subtraia 20 desde a coordenada Y do canto superior esquerdo desta caixa inicial.
+            
+      Se a coordenada Y do canto superior esquerdo desta caixa inicial for a coordenada Y desta localização,
+      cancele.
+      
+      Se a coordenada X do canto superior esquerdo desta caixa inicial for a coordenada X desta localização,
+      cancele.
+      
+      Se a coordenada X do canto inferior direito desta caixa inicial for a coordenada X desta localização,
+      cancele.
+      
+      Se a coordenada Y do canto inferior direito desta caixa inicial for a coordenada Y desta localização,
+      cancele.     
+
+      
+      Atualize a tela.
+      \Aguarde 15 milliseconds.
+    \Repita.
+\ não seria no mapa?           
+    \ Atribua a localização desta nova posição à localização desta posição inicial.
+    \ Centralize a caixa desta posição inicial sobre a localização desta nova posição.
+    \ Atribua a localização deste mouse à localização desta nova posição.
+    \ Faça a caixa desta nova posição 40 px por 40 px.
+    \ Centralize a caixa desta nova posição sobre a localização desta nova posição.
+    \ Atribua a cor preta à cor deste context.
+    \ Faça uma linha reta com a localização desta posição inicial e a localização desta nova posição.    
+    \ Percorra.
+    \ Se a coordenada X desta localização desta posição inicial for menor do que  a coordenada X desta localização desta nova posição, adicione 1 para a coordenada X desta localização desta posição inicial.
+    \ Se a coordenada Y desta localização desta posição inicial for menor do que  a coordenada Y desta localização desta nova posição, adicione 1 para a coordenada Y desta localização desta posição inicial.
+    \ Se o X1 desta caixa desta posição inicial for menor do que o X1 desta caixa desta nova posição, adicione 1 ao X1 desta caixa desta posição inicial.
+    \ Se o X2 desta caixa desta posição inicial for menor do que o X2 desta caixa desta nova posição, adicione 1 ao X2 desta caixa desta posição inicial.
+    \ Se o Y1 desta caixa desta posição inicial for menor do que o Y1 desta caixa desta nova posição, adicione 1 ao Y1 desta caixa desta posição inicial.
+    \ Se o Y2 desta caixa desta posição inicial for menor do que o Y2 desta caixa desta nova posição, adicione 1 ao Y2 desta caixa desta posição inicial.
+    \ Se a coordenada X desta localização desta posição inicial for a coordenada X desta localização desta nova posição, pare.
+    \ Se a coordenada Y desta localização desta posição inicial for a coordenada Y desta localização desta nova posição, pare.
+    \Se a caixa desta posição inicial estiver em a caixa desta nova posição, pare.
+    \ Repita.
+    \
+    \ Atualize a tela.
+
+
+
+
+\ estabelecer uma coordenada inicial
+\estabelecer a coordenada final
+\tracar uma linha entre as duas coordenadas
